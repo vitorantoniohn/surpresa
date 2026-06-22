@@ -1,0 +1,75 @@
+body {
+    background-color: #ffe6e6;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    overflow: hidden; /* Evita que a tela crie barra de rolagem quando o botão fugir */
+}
+
+.container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 20px;
+    /* Adicionamos uma transição para o movimento ficar suave */
+    transition: top 0.3s ease, left 0.3s ease, background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ff1a1a;
+    transform: scale(1.05);
+}
+
+.escondido {
+    display: none;
+}
+
+#mensagem {
+    font-size: 24px;
+    color: #921a88;
+    margin-top: 20px;
+    font-weight: bold;
+    display: none; /* Garante que a mensagem também comece escondida */
+}
+
+/* --------------------------------------------------- */
+/* AQUI ESTÁ A MÁGICA QUE ESCONDE AS FOTOS NO INÍCIO */
+/* --------------------------------------------------- */
+#galeria {
+    display: none; /* É esta linha que faz as fotos sumirem no começo! */
+    justify-content: center;
+    gap: 20px; 
+    margin-top: 20px;
+}
+
+.nossaFoto {
+    width: 100%;
+    max-width: 200px; 
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+#textoAbaixo {
+    display: none; /* A mágica que mantém o texto escondido no início */
+    font-size: 20px;
+    color: #921a88; /* Mesma cor do botão */
+    margin-top: 25px;
+    font-weight: bold;
+    font-style: italic; /* Dá um toque charmoso e diferente da mensagem de cima */
+}
