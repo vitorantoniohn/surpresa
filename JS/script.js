@@ -1,93 +1,122 @@
-// Dados das subpáginas (Personalize as datas, fotos da pasta img/ e histórias!)
+// =========================================================================
+// EDITE AQUI AS DATAS, TÍTULOS E HISTÓRIAS DOS 8 DIAS QUE VOCÊS SAÍRAM
+// =========================================================================
 const encontros = [
     {
-        data: "Nosso 1º Encontro",
-        titulo: "O Dia em que Tudo Brilhou",
-        foto: "img/amor.jpeg",
-        legenda: "Onde o meu sorriso encontrou o seu 💕",
-        historia: "Eu lembro de cada detalhe desse dia! Desde o friozinho na barriga antes de te ver até o momento em que você chegou e deixou tudo mais bonito. Conversamos por horas e parecia que o tempo voava.",
-        destaque: "💛 O que eu mais amei: Ver o seu sorriso de pertinho pela primeira vez!"
+        data: "Encontro 1",
+        titulo: "Onde Tudo Começou ✨",
+        foto: "img/img1.jpeg",
+        historia: "Lembro de cada detalhe desse dia! Estar ao seu lado fez o tempo passar voando e meu coração ter certeza de que você é a pessoa mais especial do mundo."
     },
     {
-        data: "Nosso 2º Passeio",
-        titulo: "Risadas & Momentos Doces",
-        foto: "img/amor1.jpeg",
-        legenda: "Qualquer lugar fica perfeito com você 🍦✨",
-        historia: "Nesse dia a gente se divertiu tanto! Cada piada boba, cada olhar e cada passo de mãos dadas me davam a certeza de que eu estava ao lado da mulher mais incrível do mundo.",
-        destaque: "🐬 O que eu mais amei: Nossas crises de riso e o seu abraço apertado!"
+        data: "Encontro 2",
+        titulo: "Nosso Passeio Inesquecível 💛",
+        foto: "img/img2.jpeg",
+        historia: "Mais um dia perfeito com você! As nossas risadas, o seu olhar e a paz que eu sinto quando estamos juntos deixaram esse dia guardado para sempre na minha memória."
     },
     {
-        data: "Nosso 3º Encontro",
-        titulo: "Um Pôr do Sol Inesquecível",
-        foto: "img/amor.jpeg",
-        legenda: "Você é mais linda que qualquer paisagem 🌸☀️",
-        historia: "O céu ficou todo rosa e amarelado, igualzinho às suas cores favoritas! Mas nem o pôr do sol mais bonito chega perto do brilho que os seus olhos têm quando você está feliz.",
-        destaque: "🐝 O que eu mais amei: Ficar admirando você enquanto o sol se punha!"
+        data: "Encontro 3",
+        titulo: "Sorrisos e Momentos Fofos 🌸",
+        foto: "img/img3.jpeg",
+        historia: "Não importa o lugar, qualquer passeio fica mágico quando estou segurando a sua mão. Você estava deslumbrante nesse dia!"
     },
     {
-        data: "Nosso 4º Encontro",
-        titulo: "Nossa Noite Mágica",
-        foto: "img/amor1.jpeg",
-        legenda: "Colecionando memórias ao seu lado 🥰",
-        historia: "Mais um dia perfeito pra nossa conta! Não importa para onde a gente vá, estar com você transforma qualquer passeio simples na melhor aventura da minha vida.",
-        destaque: "🌷 O que eu mais amei: Cada segundo ao seu lado!"
+        data: "Encontro 4",
+        titulo: "Um Dia Cheio de Amor 💖",
+        foto: "img/img4.jpeg",
+        historia: "Cada minuto desse encontro foi único. Adoro como a gente se diverte com as coisas mais simples e cria as melhores lembranças juntos."
+    },
+    {
+        data: "Encontro 5",
+        titulo: "Nossa Sintonia Única 🐝",
+        foto: "img/img5.jpeg",
+        historia: "Olhar essa foto me dá um quentinho no coração. Obrigado por ser minha melhor companhia, minha parceira e o grande amor da minha vida."
+    },
+    {
+        data: "Encontro 6",
+        titulo: "Alegria do Início ao Fim 🐬",
+        foto: "img/img7.jpeg",
+        historia: "Mais um capítulo lindo da nossa história! Amo o jeito que você sorri e ilumina tudo ao seu redor."
+    },
+    {
+        data: "Encontro 7",
+        titulo: "Momento Especial com Você 🌻",
+        foto: "img/img8.jpeg",
+        historia: "Guardar esses momentos ao seu lado é a minha parte favorita da vida. Que a gente continue colecionando milhares de dias assim!"
+    },
+    {
+        data: "Encontro 8",
+        titulo: "Te Amo Cada Dia Mais ❤️",
+        foto: "img/img9.jpeg",
+        historia: "Fechando nossa linha do tempo até aqui com a certeza de que ainda vamos viver infinitas aventuras juntos. Feliz aniversário, minha princesa!"
     }
 ];
 
-function soltarFogos() {
-    const duracao = 2.5 * 1000;
-    const fim = Date.now() + duracao;
-    const cores = ['#fb6f92', '#ff8fab', '#ffb703', '#ffea85', '#ffffff'];
+// Referências dos elementos da tela
+const listaTimeline = document.getElementById('listaTimeline');
+const paginaPrincipal = document.getElementById('paginaPrincipal');
+const paginaDetalhe = document.getElementById('paginaDetalhe');
+const btnVoltar = document.getElementById('btnVoltar');
+const btnFogos = document.getElementById('btnFogos');
+const camadaBichinhos = document.getElementById('camadaBichinhos');
 
-    (function frame() {
-        confetti({
-            particleCount: 5,
-            angle: 60,
-            spread: 55,
-            origin: { x: 0, y: 0.65 },
-            colors: cores
-        });
-        confetti({
-            particleCount: 5,
-            angle: 120,
-            spread: 55,
-            origin: { x: 1, y: 0.65 },
-            colors: cores
-        });
+// Elementos da Subpágina
+const detalheData = document.getElementById('detalheData');
+const detalheTitulo = document.getElementById('detalheTitulo');
+const detalheFoto = document.getElementById('detalheFoto');
+const detalheHistoria = document.getElementById('detalheHistoria');
 
-        if (Date.now() < fim) {
-            requestAnimationFrame(frame);
-        }
-    }());
-}
-
-function abrirDia(index) {
-    const dados = encontros[index];
-    document.getElementById('sub-date').innerText = dados.data;
-    document.getElementById('sub-title').innerText = dados.titulo;
-    document.getElementById('sub-img').src = dados.foto;
-    document.getElementById('sub-caption').innerText = dados.legenda;
-    document.getElementById('sub-story').innerText = dados.historia;
-    document.getElementById('sub-highlight').innerText = dados.destaque;
-
-    document.getElementById('main-page').classList.remove('active');
-    document.getElementById('sub-page').classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-
-    confetti({
-        particleCount: 60,
-        spread: 70,
-        origin: { y: 0.4 },
-        colors: ['#fb6f92', '#ffb703', '#ff8fab']
+// 1. Cria os cartões na Linha do Tempo Horizontal
+function carregarTimeline() {
+    listaTimeline.innerHTML = '';
+    encontros.forEach((item, index) => {
+        const cartao = document.createElement('div');
+        cartao.className = 'item-timeline';
+        cartao.innerHTML = `
+            <img src="${item.foto}" alt="${item.titulo}" class="mini-foto">
+            <div class="ponto-timeline"></div>
+            <span class="data-timeline">${item.data}</span>
+            <p class="resumo-timeline">${item.titulo}</p>
+        `;
+        cartao.addEventListener('click', () => abrirSubpagina(index));
+        listaTimeline.appendChild(cartao);
     });
 }
 
-function voltarInicio() {
-    document.getElementById('sub-page').classList.remove('active');
-    document.getElementById('main-page').classList.add('active');
+// 2. Abre a subpágina com os detalhes do encontro e ativa golfinhos e abelhas
+function abrirSubpagina(index) {
+    const encontro = encontros[index];
+    detalheData.innerText = encontro.data;
+    detalheTitulo.innerText = encontro.titulo;
+    detalheFoto.src = encontro.foto;
+    detalheHistoria.innerText = encontro.historia;
+
+    paginaPrincipal.classList.remove('ativa');
+    paginaDetalhe.classList.add('ativa');
     window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    criarBichinhosAnimados();
+    soltarConfetesSuaves();
 }
 
-window.addEventListener('load', () => {
-    setTimeout(soltarFogos, 400);
+// 3. Volta para a página principal
+btnVoltar.addEventListener('click', () => {
+    paginaDetalhe.classList.remove('ativa');
+    paginaPrincipal.classList.add('ativa');
+    camadaBichinhos.innerHTML = '';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+// 4. Cria animação de Golfinhos 🐬 e Abelhas 🐝 espalhados pela subpágina
+function criarBichinhosAnimados() {
+    camadaBichinhos.innerHTML = '';
+    const emojis = ['🐬', '🐝', '🐬', '🐝', '🌸', '✨', '🐬', '🐝'];
+
+    for (let i = 0; i < 10; i++) {
+        const span = document.createElement('span');
+        span.className = 'bichinho-flutuante';
+        span.innerText = emojis[i % emojis.length];
+        span.style.left = Math.floor(Math.random() * 85 + 5) + 'vw';
+        span.style.top = Math.floor(Math.random() * 80 + 10) + 'vh';
+        span.style.animationDuration = (Math.random() * 3 + 4) + 's';
+        span.style.animationDelay = (Math.random() * 2) + '
