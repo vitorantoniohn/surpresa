@@ -90,4 +90,225 @@
         }
         .cartao-mensagem p { font-size: 0.95rem; line-height: 1.6; }
         .secao-timeline { margin: 20px 0; text-align: center; }
-        .titulo-secao { font-family: 'Dancing Script', cursive; font-size: 2.
+        .titulo-secao { font-family: 'Dancing Script', cursive; font-size: 2.2rem; color: var(--rosa-forte); }
+        .dica-arraste { font-size: 0.8rem; color: #8a4b62; margin-bottom: 12px; }
+        .timeline-wrapper { position: relative; padding: 15px 0; }
+        .linha-horizontal {
+            position: absolute;
+            top: 58%;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: repeating-linear-gradient(90deg, var(--rosa-medio) 0, var(--rosa-medio) 10px, var(--amarelo-ouro) 10px, var(--amarelo-ouro) 20px);
+            z-index: 1;
+            border-radius: 4px;
+        }
+        .timeline-scroll {
+            display: flex;
+            gap: 18px;
+            overflow-x: auto;
+            padding: 15px 12px 20px 12px;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            position: relative;
+            z-index: 2;
+        }
+        .item-timeline {
+            flex: 0 0 135px;
+            scroll-snap-align: center;
+            background: var(--branco);
+            border: 3px solid var(--amarelo-ouro);
+            border-radius: 18px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+        }
+        .mini-foto {
+            width: 100%;
+            height: 110px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 2px solid var(--rosa-claro);
+            margin-bottom: 8px;
+            display: block;
+        }
+        .ponto-timeline {
+            width: 14px;
+            height: 14px;
+            background: var(--rosa-forte);
+            border: 3px solid var(--amarelo-ouro);
+            border-radius: 50%;
+            margin: 0 auto 6px;
+        }
+        .data-timeline { font-weight: 600; font-size: 0.8rem; color: var(--rosa-forte); display: block; }
+        .resumo-timeline { font-size: 0.72rem; color: #7a4659; margin-top: 2px; }
+        .topo-voltar { z-index: 10; margin-bottom: 12px; }
+        .btn-voltar {
+            background: var(--branco);
+            color: var(--rosa-forte);
+            border: 2px solid var(--rosa-medio);
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+        .cartao-detalhe {
+            background: rgba(255, 255, 255, 0.92);
+            border: 3px solid var(--amarelo-ouro);
+            border-radius: 24px;
+            padding: 22px 18px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(224, 30, 90, 0.18);
+            z-index: 10;
+            margin-bottom: 20px;
+        }
+        .data-badge {
+            background: var(--rosa-claro);
+            color: var(--rosa-forte);
+            padding: 5px 14px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .titulo-detalhe { font-family: 'Dancing Script', cursive; font-size: 2.4rem; color: var(--rosa-forte); margin: 10px 0 15px; }
+        .moldura-foto {
+            background: linear-gradient(135deg, var(--rosa-medio), var(--amarelo-ouro));
+            padding: 6px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+        }
+        .moldura-foto img {
+            width: 100%;
+            max-height: 340px;
+            object-fit: cover;
+            border-radius: 15px;
+            display: block;
+        }
+        .caixa-historia {
+            background: var(--amarelo-claro);
+            border-left: 4px solid var(--rosa-forte);
+            padding: 15px;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: left;
+        }
+        .decoracao-extra { margin-top: 15px; font-size: 1.4rem; display: flex; justify-content: center; gap: 12px; }
+        .camada-bichinhos {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 5;
+            overflow: hidden;
+        }
+        .bichinho-flutuante {
+            position: absolute;
+            font-size: 1.9rem;
+            animation: voarNaTela 6s ease-in-out infinite;
+            opacity: 0.9;
+        }
+        @keyframes voarNaTela {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(20px, -25px) rotate(12deg); }
+            50% { transform: translate(-15px, -45px) rotate(-10deg); }
+            75% { transform: translate(15px, -20px) rotate(8deg); }
+        }
+        .rodape-jardim {
+            text-align: center;
+            padding: 18px 10px 24px;
+            margin-top: auto;
+            background: rgba(255, 255, 255, 0.65);
+            border-top: 2px dashed var(--amarelo-ouro);
+            border-radius: 24px 24px 0 0;
+            z-index: 10;
+        }
+        .flores-animadas { font-size: 1.5rem; display: flex; justify-content: center; gap: 8px; margin-bottom: 8px; }
+        .flores-animadas span { display: inline-block; animation: balancarFlor 2.5s ease-in-out infinite; }
+        .flores-animadas span:nth-child(even) { animation-delay: 0.6s; }
+        @keyframes balancarFlor {
+            0%, 100% { transform: rotate(-10deg) translateY(0); }
+            50% { transform: rotate(10deg) translateY(-4px); }
+        }
+        .rodape-jardim p { font-size: 0.85rem; font-weight: 500; }
+        .assinatura-amo { font-family: 'Dancing Script', cursive; font-size: 1.4rem !important; color: var(--rosa-forte); margin-top: 4px; }
+    </style>
+</head>
+<body>
+
+    <main id="paginaPrincipal" class="tela ativa">
+        <div class="cabecalho-festa">
+            <span class="badge-data">🎉 O Dia Mais Especial do Ano 🎉</span>
+            <h1 class="titulo-parabens">Feliz Aniversário, Meu Amor!</h1>
+            <button id="btnFogos" class="btn-festa">✨ Soltar Mais Fogos e Confetes! 🎆</button>
+        </div>
+
+        <section class="cartao-mensagem">
+            <h2>Para a mulher mais incrível do mundo 💖</h2>
+            <p>
+                Hoje o dia é todo seu, mas o maior presente quem ganhou fui eu por ter você na minha vida. 
+                Obrigado por cada sorriso, cada abraço e por iluminar os meus dias com a sua alegria. 
+                Que esse novo ciclo seja tão lindo e radiante quanto você!
+            </p>
+        </section>
+
+        <section class="secao-timeline">
+            <h2 class="titulo-secao">✨ Nossa Linha do Tempo ✨</h2>
+            <p class="dica-arraste">👉 Arraste para o lado e toque nas fotos para relembrar nossos dias 👈</p>
+            
+            <div class="timeline-wrapper">
+                <div class="linha-horizontal"></div>
+                <div id="listaTimeline" class="timeline-scroll"></div>
+            </div>
+        </section>
+
+        <footer class="rodape-jardim">
+            <div class="flores-animadas">
+                <span>🌸</span><span>🌻</span><span>🌷</span><span>🌼</span><span>🌺</span><span>🌻</span><span>🌸</span><span>🌷</span>
+            </div>
+            <p>Feito com muito amor pelo seu namorado 💛🩷</p>
+            <p class="assinatura-amo">Eu te amo infinitamente! ❤️</p>
+        </footer>
+    </main>
+
+    <section id="paginaDetalhe" class="tela">
+        <div id="camadaBichinhos" class="camada-bichinhos"></div>
+
+        <div class="topo-voltar">
+            <button id="btnVoltar" class="btn-voltar">⬅ Voltar para a Linha do Tempo</button>
+        </div>
+
+        <article class="cartao-detalhe">
+            <span id="detalheData" class="data-badge">Data</span>
+            <h1 id="detalheTitulo" class="titulo-detalhe">Título do Dia</h1>
+            
+            <div class="moldura-foto">
+                <img id="detalheFoto" src="" alt="Foto do nosso dia">
+            </div>
+
+            <div class="caixa-historia">
+                <p id="detalheHistoria"></p>
+            </div>
+
+            <div class="decoracao-extra">
+                <span>🐬</span> <span>🐝</span> <span>🌻</span> <span>💖</span> <span>🐝</span> <span>🐬</span>
+            </div>
+        </article>
+
+        <footer class="rodape-jardim">
+            <div class="flores-animadas">
+                <span>🌸</span><span>🌻</span><span>🌷</span><span>🌼</span><span>🌺</span><span>🌻</span><span>🌸</span><span>🌷</span>
+            </div>
+            <p>Feito com muito amor pelo seu namorado 💛🩷</p>
+            <p class="assinatura-amo">Eu te amo infinitamente! ❤️</p>
+        </footer>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="JS/script.js?v=3"></script>
+</body>
+</html>
