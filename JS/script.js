@@ -1,63 +1,93 @@
-const botao = document.getElementById('botaoFofo');
-const mensagem = document.getElementById('mensagem');
-const galeria = document.getElementById('galeria'); // Puxamos a galeria com as fotos
-const titulo = document.getElementById('titulo');
-const instrucao = document.getElementById('instrucao');
-const textoAbaixo = document.getElementById('textoAbaixo');
-
-// A variável que conta os cliques
-let contadorCliques = 0;
-
-botao.addEventListener('click', function() {
-    contadorCliques++; // Aumenta 1 no contador a cada clique
-
-    // O botão foge se o clique for menor que 5
-    if (contadorCliques < 5) {
-        
-        // Calculamos o espaço seguro na tela
-        const larguraJanela = window.innerWidth - botao.clientWidth;
-        const alturaJanela = window.innerHeight - botao.clientHeight;
-
-        // Geramos coordenadas aleatórias
-        const aleatorioX = Math.floor(Math.random() * larguraJanela);
-        const aleatorioY = Math.floor(Math.random() * alturaJanela);
-
-        // Movemos o botão para a nova posição
-        botao.style.position = 'absolute';
-        botao.style.left = aleatorioX + 'px';
-        botao.style.top = aleatorioY + 'px';
-
-        botao.innerText = "Errou anjo! Aperta dnv pfv";
-        
-    } else {
-        // CLIQUE NÚMERO 5! A surpresa acontece!
-        mensagem.style.display = 'block'; 
-        galeria.style.display = 'flex'; 
-        
-        // ADICIONE ESTA LINHA: Mostra o texto debaixo das fotos
-        textoAbaixo.style.display = 'block';
-
-
-
-        botao.style.display = 'none'; // Esconde o botão fujão
-        instrucao.style.display = 'none'; // Esconde a instrução inicial
-        
-        // Substitui o título pela mensagem de desculpas
-        titulo.innerText = "Como pude cometer um erro grotesto desses?❤️";
-        
-        mensagem.style.display = 'block'; // Mostra a mensagem de amor
-        
-        // É AQUI QUE AS FOTOS APARECEM! Usamos 'flex' para exibir lado a lado no 5º clique.
-        galeria.style.display = 'flex'; 
-        
-        // Faz chover os confetes
-        confetti({
-            particleCount: 200, 
-            spread: 90,         
-            origin: { y: 0.6 }  
-
-
-            
-        });
+// Dados das subpáginas (Personalize as datas, fotos da pasta img/ e histórias!)
+const encontros = [
+    {
+        data: "Nosso 1º Encontro",
+        titulo: "O Dia em que Tudo Brilhou",
+        foto: "img/amor.jpeg",
+        legenda: "Onde o meu sorriso encontrou o seu 💕",
+        historia: "Eu lembro de cada detalhe desse dia! Desde o friozinho na barriga antes de te ver até o momento em que você chegou e deixou tudo mais bonito. Conversamos por horas e parecia que o tempo voava.",
+        destaque: "💛 O que eu mais amei: Ver o seu sorriso de pertinho pela primeira vez!"
+    },
+    {
+        data: "Nosso 2º Passeio",
+        titulo: "Risadas & Momentos Doces",
+        foto: "img/amor1.jpeg",
+        legenda: "Qualquer lugar fica perfeito com você 🍦✨",
+        historia: "Nesse dia a gente se divertiu tanto! Cada piada boba, cada olhar e cada passo de mãos dadas me davam a certeza de que eu estava ao lado da mulher mais incrível do mundo.",
+        destaque: "🐬 O que eu mais amei: Nossas crises de riso e o seu abraço apertado!"
+    },
+    {
+        data: "Nosso 3º Encontro",
+        titulo: "Um Pôr do Sol Inesquecível",
+        foto: "img/amor.jpeg",
+        legenda: "Você é mais linda que qualquer paisagem 🌸☀️",
+        historia: "O céu ficou todo rosa e amarelado, igualzinho às suas cores favoritas! Mas nem o pôr do sol mais bonito chega perto do brilho que os seus olhos têm quando você está feliz.",
+        destaque: "🐝 O que eu mais amei: Ficar admirando você enquanto o sol se punha!"
+    },
+    {
+        data: "Nosso 4º Encontro",
+        titulo: "Nossa Noite Mágica",
+        foto: "img/amor1.jpeg",
+        legenda: "Colecionando memórias ao seu lado 🥰",
+        historia: "Mais um dia perfeito pra nossa conta! Não importa para onde a gente vá, estar com você transforma qualquer passeio simples na melhor aventura da minha vida.",
+        destaque: "🌷 O que eu mais amei: Cada segundo ao seu lado!"
     }
+];
+
+function soltarFogos() {
+    const duracao = 2.5 * 1000;
+    const fim = Date.now() + duracao;
+    const cores = ['#fb6f92', '#ff8fab', '#ffb703', '#ffea85', '#ffffff'];
+
+    (function frame() {
+        confetti({
+            particleCount: 5,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0, y: 0.65 },
+            colors: cores
+        });
+        confetti({
+            particleCount: 5,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1, y: 0.65 },
+            colors: cores
+        });
+
+        if (Date.now() < fim) {
+            requestAnimationFrame(frame);
+        }
+    }());
+}
+
+function abrirDia(index) {
+    const dados = encontros[index];
+    document.getElementById('sub-date').innerText = dados.data;
+    document.getElementById('sub-title').innerText = dados.titulo;
+    document.getElementById('sub-img').src = dados.foto;
+    document.getElementById('sub-caption').innerText = dados.legenda;
+    document.getElementById('sub-story').innerText = dados.historia;
+    document.getElementById('sub-highlight').innerText = dados.destaque;
+
+    document.getElementById('main-page').classList.remove('active');
+    document.getElementById('sub-page').classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    confetti({
+        particleCount: 60,
+        spread: 70,
+        origin: { y: 0.4 },
+        colors: ['#fb6f92', '#ffb703', '#ff8fab']
+    });
+}
+
+function voltarInicio() {
+    document.getElementById('sub-page').classList.remove('active');
+    document.getElementById('main-page').classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+window.addEventListener('load', () => {
+    setTimeout(soltarFogos, 400);
 });
