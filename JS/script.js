@@ -1,51 +1,51 @@
 const encontros = [
     {
-        data: "Encontro 1",
-        titulo: "Onde Tudo Começou ✨",
+        data: "Jockey",
+        titulo: "Super encontro ✨",
         arquivo: "img1.jpeg",
-        historia: "Lembro de cada detalhe desse dia! Estar ao seu lado fez o tempo passar voando e meu coração ter certeza de que você é a pessoa mais especial do mundo."
+        historia: "Um super dia, com um super papá, com super cavalos e uma super mulher !"
     },
     {
-        data: "Encontro 2",
-        titulo: "Nosso Passeio Inesquecível 💛",
+        data: "Academia",
+        titulo: "Primeira vez treinando",
         arquivo: "img2.jpeg",
-        historia: "Mais um dia perfeito com você! As nossas risadas, o seu olhar e a paz que eu sinto quando estamos juntos deixaram esse dia guardado para sempre na minha memória."
+        historia: "Malhamos juntinhos e tiramos boas risadas no treino, um dia inesquecível."
     },
     {
-        data: "Encontro 3",
-        titulo: "Sorrisos e Momentos Fofos 🌸",
+        data: "Anivérsário",
+        titulo: "Uma festá incrível 🌸",
         arquivo: "img3.jpeg",
-        historia: "Não importa o lugar, qualquer passeio fica mágico quando estou segurando a sua mão. Você estava deslumbrante nesse dia!"
+        historia: "Conheci toda sua familia incrivel e pude celebrar o aniversário da sua irmã incrível"
     },
     {
-        data: "Encontro 4",
-        titulo: "Um Dia Cheio de Amor 💖",
+        data: "Praia",
+        titulo: "Primeira vez na praia",
         arquivo: "img4.jpeg",
-        historia: "Cada minuto desse encontro foi único. Adoro como a gente se diverte com as coisas mais simples e cria as melhores lembranças juntos."
+        historia: "Fomos na praia juntos pela primeira vez, fazendo várias coisas legais juntos e passenado pela cidade! "
     },
     {
-        data: "Encontro 5",
-        titulo: "Nossa Sintonia Única 🐝",
+        data: "Papazinho",
+        titulo: "Dando pudim para minha bebê",
         arquivo: "img5.jpeg",
-        historia: "Olhar essa foto me dá um quentinho no coração. Obrigado por ser minha melhor companhia, minha parceira e o grande amor da minha vida."
+        historia: "Sei o quão você gosta daquele restaurante na rua uruguaiana, então nunca vou esquecer do seu pudim!"
     },
     {
-        data: "Encontro 6",
-        titulo: "Alegria do Início ao Fim 🐬",
+        data: "Rock In Rio",
+        titulo: "Festival e fogos",
         arquivo: "img7.jpeg",
-        historia: "Mais um capítulo lindo da nossa história! Amo o jeito que você sorri e ilumina tudo ao seu redor."
+        historia: "Apesar dos apesares, foi um dia incrível onde dançamos juntos e cantamos juntos, visitando diversos stands"
     },
     {
-        data: "Encontro 7",
-        titulo: "Momento Especial com Você 🌻",
+        data: "Teatro",
+        titulo: "Romeu e Julieta ",
         arquivo: "img8.jpeg",
-        historia: "Guardar esses momentos ao seu lado é a minha parte favorita da vida. Que a gente continue colecionando milhares de dias assim!"
+        historia: "Vimos uma apresentação incrível, em um lugar incrível, ao lado do amor da minha vida! Te amo"
     },
     {
-        data: "Encontro 8",
-        titulo: "Te Amo Cada Dia Mais ❤️",
+        data: "Roda Gigante",
+        titulo: "Roda Gigante ❤️",
         arquivo: "img9.jpeg",
-        historia: "Fechando nossa linha do tempo até aqui com a certeza de que ainda vamos viver infinitas aventuras juntos. Feliz aniversário, minha princesa!"
+        historia: "Nosso primeiro encontro, onde fizemos várias coisas legais! Nos conhecemos melhor e ficamos agarradinhos o dia todo."
     }
 ];
 
