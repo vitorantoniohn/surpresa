@@ -4,145 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Feliz Aniversário, Meu Amor! 💖✨</title>
-    <!-- Fontes fofas e românticas do Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Conectando com a sua pasta CSS -->
+    <!-- Fontes românticas do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Conectando ao seu CSS na pasta CSS -->
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
 
-<div class="app-wrapper">
-
     <!-- PÁGINA PRINCIPAL (MAIN PAGE) -->
-    <main id="main-page" class="page active">
-        <section class="hero">
-            <span class="badge-niver">🎉 Dia Mais Especial do Ano 🎉</span>
+    <main id="paginaPrincipal" class="tela ativa">
+        <div class="cabecalho-festa">
+            <span class="badge-data">🎉 O Dia Mais Especial do Ano 🎉</span>
             <h1 class="titulo-parabens">Feliz Aniversário, Meu Amor!</h1>
-            <button class="btn-fogos" onclick="soltarFogos()">
-                🎆 Soltar Fogos e Confetes!
-            </button>
-        </section>
+            <button id="btnFogos" class="btn-festa">✨ Soltar Mais Fogos e Confetes! 🎆</button>
+        </div>
 
-        <section class="carta-container">
-            <p class="carta-texto">
-                Hoje o dia amanheceu mais rosa e dourado porque é o seu aniversário! 🌸☀️<br><br>
-                Você é a pessoa mais incrível, doce e iluminada que eu já conheci. Cada segundo ao seu lado transforma a minha vida em uma festa. Preparei esse cantinho com nossas memórias para você lembrar do quanto é amada!
+        <section class="cartao-mensagem">
+            <h2>Para a mulher mais incrível do mundo 💖</h2>
+            <p>
+                Hoje o dia é todo seu, mas o maior presente quem ganhou fui eu por ter você na minha vida. 
+                Obrigado por cada sorriso, cada abraço e por iluminar os meus dias com a sua alegria. 
+                Que esse novo ciclo seja tão lindo e radiante quanto você!
             </p>
         </section>
 
-        <section class="timeline-section">
-            <h2 class="section-title">Nossos Dias Juntos</h2>
-            <p class="section-subtitle">✨ Arraste para o lado e toque na foto para abrir o dia ✨</p>
-
-            <!-- Linha do Tempo Horizontal -->
-            <div class="timeline-wrapper" id="timeline">
-                
-                <!-- Encontro 1 -->
-                <div class="timeline-node" onclick="abrirDia(0)">
-                    <div class="mini-photo-card">
-                        <img src="img/amor.jpeg" alt="Encontro 1">
-                        <span class="click-hint">Ver dia 👆</span>
-                    </div>
-                    <div class="timeline-dot">💖</div>
-                    <span class="timeline-date">Dia 1</span>
-                    <span class="timeline-label">Nosso 1º Passeio</span>
+        <section class="secao-timeline">
+            <h2 class="titulo-secao">✨ Nossa Linha do Tempo ✨</h2>
+            <p class="dica-arraste">👉 Arraste para o lado e toque nas fotos para relembrar nossos dias 👈</p>
+            
+            <div class="timeline-wrapper">
+                <div class="linha-horizontal"></div>
+                <div id="listaTimeline" class="timeline-scroll">
+                    <!-- Os 8 encontros com suas fotos são gerados automaticamente pelo script.js -->
                 </div>
-
-                <!-- Encontro 2 -->
-                <div class="timeline-node" onclick="abrirDia(1)">
-                    <div class="mini-photo-card">
-                        <img src="img/amor1.jpeg" alt="Encontro 2">
-                        <span class="click-hint">Ver dia 👆</span>
-                    </div>
-                    <div class="timeline-dot">🌻</div>
-                    <span class="timeline-date">Dia 2</span>
-                    <span class="timeline-label">Risos & Sorvete</span>
-                </div>
-
-                <!-- Encontro 3 -->
-                <div class="timeline-node" onclick="abrirDia(2)">
-                    <div class="mini-photo-card">
-                        <img src="img/amor.jpeg" alt="Encontro 3">
-                        <span class="click-hint">Ver dia 👆</span>
-                    </div>
-                    <div class="timeline-dot">🐬</div>
-                    <span class="timeline-date">Dia 3</span>
-                    <span class="timeline-label">Pôr do Sol Lindo</span>
-                </div>
-
-                <!-- Encontro 4 -->
-                <div class="timeline-node" onclick="abrirDia(3)">
-                    <div class="mini-photo-card">
-                        <img src="img/amor1.jpeg" alt="Encontro 4">
-                        <span class="click-hint">Ver dia 👆</span>
-                    </div>
-                    <div class="timeline-dot">🐝</div>
-                    <span class="timeline-date">Dia 4</span>
-                    <span class="timeline-label">Noite Especial</span>
-                </div>
-
             </div>
         </section>
+
+        <!-- Rodapé com Jardim de Flores e Assinatura -->
+        <footer class="rodape-jardim">
+            <div class="flores-animadas">
+                <span>🌸</span><span>🌻</span><span>🌷</span><span>🌼</span><span>🌺</span><span>🌻</span><span>🌸</span><span>🌷</span>
+            </div>
+            <p>Feito com muito amor pelo seu namorado 💛🩷</p>
+            <p class="assinatura-amo">Eu te amo infinitamente! ❤️</p>
+        </footer>
     </main>
 
-    <!-- SUBPÁGINA DOS DIAS QUE SAÍMOS (COM BICHINHOS ANIMADOS) -->
-    <section id="sub-page" class="page">
-        <div class="critters-layer">
-            <div class="bee bee-1">🐝✨</div>
-            <div class="bee bee-2">🐝💛</div>
-            <div class="bee bee-3">🐝🌸</div>
-            <div class="dolphin dolphin-1">🐬💦</div>
-            <div class="dolphin dolphin-2">🐬🫧</div>
+    <!-- SUBPÁGINA DE DETALHES DO DIA (ABRE AO CLICAR NA FOTO) -->
+    <section id="paginaDetalhe" class="tela">
+        <!-- Camada de bichinhos animados (Golfinhos e Abelhas) -->
+        <div id="camadaBichinhos" class="camada-bichinhos"></div>
+
+        <div class="topo-voltar">
+            <button id="btnVoltar" class="btn-voltar">⬅ Voltar para a Linha do Tempo</button>
         </div>
 
-        <div class="subpage-header">
-            <button class="btn-voltar" onclick="voltarInicio()">
-                ⬅ Voltar
-            </button>
-            <span id="sub-date" class="subpage-date-badge">Data</span>
-        </div>
-
-        <div class="subpage-content">
-            <h2 id="sub-title" class="subpage-title">Título do Nosso Dia</h2>
-
-            <div class="polaroid-frame">
-                <img id="sub-img" src="" alt="Foto do nosso encontro">
-                <p id="sub-caption" class="polaroid-caption">Legenda da foto</p>
+        <article class="cartao-detalhe">
+            <span id="detalheData" class="data-badge">Data</span>
+            <h1 id="detalheTitulo" class="titulo-detalhe">Título do Dia</h1>
+            
+            <div class="moldura-foto">
+                <img id="detalheFoto" src="" alt="Foto do nosso dia">
             </div>
 
-            <div class="story-card">
-                <h3>📖 Como foi o nosso dia:</h3>
-                <p id="sub-story">História detalhada do encontro...</p>
+            <div class="caixa-historia">
+                <p id="detalheHistoria"></p>
             </div>
 
-            <div class="highlights-box" id="sub-highlight">
-                ✨ Momento inesquecível!
+            <div class="decoracao-extra">
+                <span>🐬</span> <span>🐝</span> <span>🌻</span> <span>💖</span> <span>🐝</span> <span>🐬</span>
             </div>
-        </div>
+        </article>
+
+        <!-- Rodapé igual em todas as páginas -->
+        <footer class="rodape-jardim">
+            <div class="flores-animadas">
+                <span>🌸</span><span>🌻</span><span>🌷</span><span>🌼</span><span>🌺</span><span>🌻</span><span>🌸</span><span>🌷</span>
+            </div>
+            <p>Feito com muito amor pelo seu namorado 💛🩷</p>
+            <p class="assinatura-amo">Eu te amo infinitamente! ❤️</p>
+        </footer>
     </section>
 
-    <!-- RODAPÉ COM FLORZINHAS (PRESENTE EM TODAS AS PÁGINAS) -->
-    <footer class="footer">
-        <div class="flower-garden">
-            <span class="flower">🌸</span>
-            <span class="flower">🌻</span>
-            <span class="flower">🌷</span>
-            <span class="flower">🌼</span>
-            <span class="flower">🌺</span>
-            <span class="flower">🌻</span>
-            <span class="flower">🌸</span>
-        </div>
-        <p class="footer-text">
-            Feito pelo seu namorado (feito com muito amor) 💝
-            <span class="footer-love">Eu te amo mais que tudo! ❤️</span>
-        </p>
-    </footer>
-
-</div>
-
-<!-- Biblioteca de Confetes e Fogos -->
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-<!-- Conectando com a sua pasta JS -->
-<script src="JS/script.js"></script>
+    <!-- Biblioteca de Fogos e Confetes -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <!-- Conectando ao seu JavaScript na pasta JS -->
+    <script src="JS/script.js"></script>
 </body>
 </html>
